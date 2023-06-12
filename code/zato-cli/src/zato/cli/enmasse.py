@@ -1121,8 +1121,8 @@ class ObjectManager:
                 if not dep:
                     msg = 'Dependency not found, name:`{}`, field_name:`{}`, type:`{}`, dep_id:`{}`, dep:`{}`, item:`{}`'
                     raise Exception(msg.format(service_info.name, field_name, info['dependent_type'], dep_id, dep, item))
-                else:
-                    item[field_name] = dep[info['dependent_field']]
+            else:
+                item[field_name] = dep[info['dependent_field']]
 
             # JSON-RPC channels cannot have empty security definitions on exports
             if item_type == 'http_soap' and item['name'].startswith('json.rpc.channel'):
